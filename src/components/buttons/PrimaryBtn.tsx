@@ -6,23 +6,19 @@ interface Props {
   to?: string;
   type?: "submit" | "reset" | "button";
   className?: string;
-  // Customize to theme
-  color?: "primary";
 }
 const PrimaryBtn = ({
   children,
   to,
-  className,
+  className = "",
   type = "button",
-  color = "primary",
 }: Props) => (
   <a
     type={type}
     href={to}
     className={
       className +
-      ` bg-${color}` +
-      " inline-block px-10 py-3 rounded-full text-lg text-white cursor-pointer"
+      " inline-block px-10 py-3 bg-primary rounded-full text-lg text-white cursor-pointer"
     }
   >
     {children}

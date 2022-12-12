@@ -21,7 +21,11 @@ module.exports = {
       colors: {
         primary: "#3DC9F2",
         "text-light": "#FFFFFF",
-        "text-dark": "#000000",
+        "text-dark": "#5A5A5A",
+        "text-green": "#42563E",
+      },
+      fontSize: {
+        bg: "350px",
       },
       padding: {
         edge: "2.5%",

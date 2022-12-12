@@ -1,0 +1,84 @@
+---
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import { Icon } from "astro-icon";
+import { Image } from "@astrojs/image/components";
+const services = [
+  {
+    icon: "ph:user-circle",
+    title: "Personal Returns",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up",
+  },
+  {
+    icon: "tabler:receipt-tax",
+    title: "Tax Projections and Managing Estimates",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up",
+  },
+  {
+    icon: "carbon:partnership",
+    title: "Partnerships & Corporations",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up",
+  },
+  {
+    icon: "mdi:report-bell-curve",
+    title: "Reporting",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up",
+  },
+  {
+    icon: "codicon:workspace-trusted",
+    title: "Trust Returns",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up",
+  },
+  {
+    icon: "mdi:phone-plus-outline",
+    title: "Financial Advising",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up",
+  },
+];
+---
+
+<section class="py-20 px-edge relative overflow-x-hidden">
+  <p class="absolute -top-10 font-bold text-bg text-text-green/10">Services</p>
+  <div class="max-w-screen-xl mx-auto relative z-10">
+    <div class="text-center max-w-xl mx-auto space-y-2">
+      <h2 class="font-bold text-5xl">Our Services</h2>
+      <p class="font-rubik text-xl text-text-dark">
+        This is just placeholder text. Don’t be alarmed, this is just here to
+        fill up space since your finalized copy isn’t ready yet.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-3 grid-rows-3 gap-x-10 items-center">
+      {
+        services.map((service, i) => (
+          <div
+            class={
+              (i % 2 === 0 ? "text-right" : "flex-row-reverse") + " flex gap-10"
+            }
+          >
+            <div class="space-y-2">
+              <p class="font-bold text-xl">{service.title}</p>
+              <p class="text-text-dark">{service.text}</p>
+            </div>
+            <Icon
+              name={service.icon}
+              size={30}
+              class="flex-grow flex-shrink-0 text-green"
+            />
+          </div>
+        ))
+      }
+
+      <Image
+        src={import("@img/natural-state-wealth-advisors-services.jpg")}
+        alt="natural state wealth advisors services"
+        class="mx-auto col-start-2 row-span-full object-cover"
+        quality={100}
+      />
+    </div>
+
+    <div class="mt-10 flex justify-center gap-8">
+      <PrimaryBtn to="/services">Learn More</PrimaryBtn>
+      <PrimaryBtn to="/clients">Our Process</PrimaryBtn>
+    </div>
+  </div>
+</section>

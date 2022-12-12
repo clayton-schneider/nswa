@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Testimonial from "@sections/Testimonial.astro";
+import OurServices from "@sections/OurServices.astro";
 
 const testimonial = {
   text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text with your real content. Sometimes it’s nice to put in text just to get an idea of how text will fill in a space on your website.",
@@ -11,5 +11,6 @@ const testimonial = {
 ---
 
 <Layout title="Welcome to Astro.">
+  <OurServices />
   <Testimonial testimonial={testimonial} />
 </Layout>
