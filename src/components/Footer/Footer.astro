@@ -1,0 +1,51 @@
+---
+const involveLinks = [
+  { link: "/teachers", text: "Teachers" },
+  { link: "/individuals", text: "Individuals" },
+  { link: "/organizations", text: "Organizations" },
+];
+
+const resourceLinks = [
+  { link: "/about-us", text: "About Us" },
+  { link: "/articles", text: "Articles" },
+  { link: "/resources", text: "Resources" },
+];
+
+const socialLinks = [
+  { name: "mdi:twitter", link: "/" },
+  { name: "mdi:instagram", link: "/" },
+  { name: "ic:baseline-tiktok", link: "/" },
+];
+
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+---
+
+<section class="text-text-light">
+  <footer class="px-edge py-12 bg-primary">
+    <div class="max-w-screen-2xl mx-auto flex justify-between">
+      <div>
+        <Image
+          src="https://via.placeholder.com/80x150"
+          alt="CHANGE ME ALT TEXT"
+        />
+        <div class="flex space-x-2 mt-6">
+          {
+            socialLinks.map((link) => (
+              <a href={link.link}>
+                <Icon name={link.name} size={24} class="fill-primary" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="bg-primary-darker py-4">
+    <p class="text-xl text-center">
+      Copyright © 2022 Website Name | All Right Reserved | Powered By <a
+        href="https://www.simply-sprout.com">Simply Sprout</a
+      >
+    </p>
+  </div>
+</section>
