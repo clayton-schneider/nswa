@@ -1,0 +1,42 @@
+---
+import { Image } from "@astrojs/image/components";
+const imgs = [
+  import("@img/benefit-one.jpg"),
+  import("@img/benefit-two.jpg"),
+  import("@img/benefit-three.jpg"),
+];
+---
+
+<section class="py-20 px-edge relative overflow-x-hidden">
+  <Image
+    src={import("@img/benefits-bg.jpg")}
+    alt="benefits background"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="max-w-screen-xl mx-auto relative z-10">
+    <div class="text-center space-y-2">
+      <h2 class="font-bold text-5xl">Highlight Your Top Benefits</h2>
+      <p class="max-w-2xl mx-auto font-rubik text-lg text-text-dark">
+        This is just placeholder text. Don’t be alarmed, this is just here to
+        fill up space since your finalized copy isn’t ready yet.
+      </p>
+    </div>
+
+    <div class="mt-16 flex justify-between">
+      {
+        imgs.map((img) => (
+          <div class="max-w-[375px]">
+            <Image src={img} alt="natural state wealth advisors benefits" />
+            <div class="text-center p-4">
+              <p class="font-bold text-xl">Placeholder Benefit</p>
+              <p class="font-rubik text-text-dark leading-loose">
+                This is just placeholder text. Don’t be alarmed, this is just
+                here to fill up space since your finalized copy isn’t ready yet.
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
