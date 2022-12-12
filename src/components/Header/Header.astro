@@ -1,13 +1,16 @@
 ---
 import { Image } from "@astrojs/image/components";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import SecondaryBtn from "@components/buttons/SecondaryBtn";
 
 // Import components
 import NavMenu from "./NavMenu";
 const links = [
   { linkText: "Home", link: "/" },
   { linkText: "About", link: "/about" },
-  { linkText: "Articles", link: "/articles" },
-  { linkText: "Resources", link: "/resources" },
+  { linkText: "Clients", link: "/clients" },
+  { linkText: "Services", link: "/services" },
+  { linkText: "Contact", link: "/contact" },
 ];
 
 interface Props {
@@ -16,14 +19,23 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<header class={(className ? className : "") + " bg-primary px-edge relative"}>
-  <div class="max-w-screen-2xl mx-auto py-4 flex items-center justify-between">
-    <a href="/">
-      <Image
-        src={import("@img/hundred-million-logo-white.png")}
-        alt="hundred million logo"
-      />
-    </a>
+<header class={(className ? className : "") + "bg-gray-400 px-edge relative"}>
+  <div class="max-w-screen-xl mx-auto py-4">
+    <div class="flex items-center justify-between">
+      <a href="/">
+        <Image
+          src={import("@img/natural-state-wealth-advisors-logo.png")}
+          alt="hundred million logo"
+        />
+      </a>
+
+      <div class="space-x-7">
+        <PrimaryBtn className="w-[200px] text-center">Client Portal</PrimaryBtn>
+        <SecondaryBtn className="w-[200px] text-center"
+          >Pay My Bill</SecondaryBtn
+        >
+      </div>
+    </div>
 
     <NavMenu links={links} client:load />
   </div>
