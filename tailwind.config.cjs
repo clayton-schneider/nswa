@@ -28,7 +28,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Poppins", ...FONT_FAMILY_BASE],
-        runik: ["Rubik", ...FONT_FAMILY_BASE],
+        rubik: ["Rubik", ...FONT_FAMILY_BASE],
       },
     },
   },

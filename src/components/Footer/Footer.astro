@@ -1,37 +1,85 @@
 ---
-const involveLinks = [
-  { link: "/teachers", text: "Teachers" },
-  { link: "/individuals", text: "Individuals" },
-  { link: "/organizations", text: "Organizations" },
+const companyLinks = [
+  { link: "/about", text: "About" },
+  { link: "/clients", text: "Clients" },
+  { link: "/services", text: "Services" },
+  { link: "/contact", text: "Contact" },
 ];
 
-const resourceLinks = [
-  { link: "/about-us", text: "About Us" },
-  { link: "/articles", text: "Articles" },
-  { link: "/resources", text: "Resources" },
+const services = [
+  "Personal Returns",
+  "Tax Projections & Managing Estimates",
+  "Partnership & Corporations",
+  "Reporting",
+  "Trust Returns",
+  "Financials Advising",
 ];
 
+const contacts = [
+  {
+    icon: "ph:house-simple",
+    text: "1129, Northwest J Street, Bentonville, Arkansas 72712, United States",
+  },
+  {
+    icon: "ic:outline-email",
+    text: "hello@example.mail",
+  },
+  {
+    icon: "charm:phone",
+    text: "479-273-2539",
+  },
+];
 const socialLinks = [
+  { name: "mdi:facebook", link: "/" },
   { name: "mdi:twitter", link: "/" },
-  { name: "mdi:instagram", link: "/" },
-  { name: "ic:baseline-tiktok", link: "/" },
+  { name: "mdi:youtube", link: "/" },
 ];
 
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 ---
 
-<section class="text-text-light">
-  <footer class="px-edge py-12 bg-primary">
+<section class="bg-black px-edge text-text-light">
+  <footer class="py-12">
     <div class="max-w-screen-2xl mx-auto flex justify-between">
-      <div>
+      <div class="max-w-lg">
         <Image
-          src="https://via.placeholder.com/80x150"
+          src={import("@img/natural-state-wealth-advisors-logo.png")}
           alt="CHANGE ME ALT TEXT"
-          width={80}
-          height={150}
-          format="jpeg"
+          width={200}
         />
+        <p class="mt-5 leading-loose font-rubik">
+          This is just placeholder text. Don’t be alarmed, this is just here to
+          fill up space since your finalized copy isn’t ready yet. Once we have
+          your content finalized, we’ll replace this placeholder text with your
+          real content.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-bold text-xl">Company</p>
+        <ul class="mt-5 flex flex-col space-y-3">
+          {
+            companyLinks.map((link) => (
+              <li>
+                <a href={link.link}>{link.text}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-xl">Contact Us</p>
+        <ul class="mt-5 space-y-5">
+          {
+            contacts.map((contact) => (
+              <li class="flex items-start space-x-5">
+                <Icon name={contact.icon} size={26} />
+                <p class="max-w-[280px]">{contact.text}</p>
+              </li>
+            ))
+          }
+        </ul>
         <div class="flex space-x-2 mt-6">
           {
             socialLinks.map((link) => (
@@ -44,11 +92,12 @@ import { Icon } from "astro-icon";
       </div>
     </div>
   </footer>
-  <div class="bg-primary-darker py-4">
-    <p class="text-xl text-center">
-      Copyright © 2022 Website Name | All Right Reserved | Powered By <a
-        href="https://www.simply-sprout.com">Simply Sprout</a
-      >
-    </p>
+  <div class="">
+    <div class="max-w-screen-xl mx-auto py-5 border-t border-white">
+      <p class="text-center">
+        Copyright © 2022 Natural State Wealth Advisors | All Right Reserved |
+        Powered By <a href="https://www.simply-sprout.com">Simply Sprout</a>
+      </p>
+    </div>
   </div>
 </section>
