@@ -1,0 +1,33 @@
+---
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+export interface Props {
+  testimonial: {
+    text: string;
+    name: string;
+    title: string;
+  };
+}
+
+const { testimonial } = Astro.props;
+---
+
+<section class="px-edge py-32 relative">
+  <Image
+    src={import("@img/testimonial-background.jpg")}
+    alt="client testimonial"
+    class="absolute inset-0 h-full"
+    quality={100}
+  />
+  <div class="max-w-3xl mx-auto text-text-light text-center relative z-10">
+    <h2 class="font-bold text-5xl">Client's Testimonial</h2>
+    <p class="mt-3 font-rubik text-xl">{testimonial.text}</p>
+    <div class="mt-8 flex justify-center items-start space-x-2">
+      <Icon name="icomoon-free:quotes-left" size={40} />
+      <div>
+        <p class="font-bold text-2xl">{testimonial.name}</p>
+        <p class="font-rubik text-lg mt-2">{testimonial.title}</p>
+      </div>
+    </div>
+  </div>
+</section>
