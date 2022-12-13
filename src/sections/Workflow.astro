@@ -1,0 +1,49 @@
+---
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+const values = [
+  {
+    icon: "client-service",
+    title: "Step ONE",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+  },
+  {
+    icon: "golden-rule",
+    title: "Step TWO",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+  },
+  {
+    icon: "learn",
+    title: "Step THREE",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+  },
+];
+---
+
+<section class="py-36 px-edge relative">
+  <Image
+    src={import("@img/benefits-bg.jpg")}
+    alt="natural state wealth advisors' workflow"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="max-w-screen-xl mx-auto relative z-10">
+    <div class="text-center">
+      <p class="font-rubik uppercase text-lg text-text-green">Our Workflow</p>
+      <h2 class="font-bold text-4xl">Describe Your Workflow</h2>
+    </div>
+
+    <div class="mt-20 flex justify-center gap-20">
+      {
+        values.map((value) => (
+          <div class="text-center max-w-[325px]">
+            <Icon name={value.icon} size={75} class="mx-auto" />
+            <p class="mt-4 font-bold text-lg">{value.title}</p>
+            <p class="mt-2 font-rubik leading-loose text-text-dark">
+              {value.text}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
