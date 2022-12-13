@@ -1,10 +1,71 @@
 ---
 import Expertise from "@sections/Expertise.astro";
+import Hero from "@sections/Hero.astro";
 import OurValues from "@sections/OurValues.astro";
 import Layout from "src/layouts/Layout.astro";
+
+import heroImg from "@img/about-hero-banner.jpg";
+import { Image } from "@astrojs/image/components";
+
+const clients = [
+  {
+    src: import("@img/clients/home-of-distinction-light.png"),
+    alt: "home of distinction",
+  },
+  {
+    src: import("@img/clients/walmart-light.png"),
+    alt: "walmart",
+  },
+  {
+    src: import("@img/clients/the-stable-light.png"),
+    alt: "the stable",
+  },
+  {
+    src: import("@img/clients/tyson-light.png"),
+    alt: "tyson",
+  },
+  {
+    src: import("@img/clients/sams-club-light.png"),
+    alt: "sams club",
+  },
+  {
+    src: import("@img/clients/jb-hunt.png"),
+    alt: "jb hunt",
+  },
+];
 ---
 
 <Layout title="About Us | Natural State Wealth Advisors">
+  <Hero title="About" img={heroImg}>
+    <div class="py-20 max-w-screen-xl mx-auto">
+      <div class="max-w-4xl mx-auto text-text-light text-center">
+        <h1 class="text-7xl font-bold">About Natural State Wealth Advisors</h1>
+        <p class="mt-2 font-rubik font-semibold text-xl">
+          Start with your mission statement and the reason why you do what you
+          do
+        </p>
+        <p class="mt-2 font-rubik text-lg">
+          This is just placeholder text. Don’t be alarmed, this is just here to
+          fill up space since your finalized copy isn’t ready yet. Once we have
+          your content finalized, we’ll replace this placeholder text with your
+          real content. Sometimes it’s nice to put in text just to get an idea
+          of how text will fill in a space on your website. Traditionally our
+          industry has used Lorem Ipsum, which is placeholder text written in
+          Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and
+          that can lead to confusion. I can’t tell you how many times clients
+          have asked me why their website is in another language!
+        </p>
+      </div>
+      <div class="mt-20">
+        <h2 class="text-3xl text-text-light text-center">
+          We Work With Clients From
+        </h2>
+        <div class="mt-8 flex justify-between items-center">
+          {clients.map((client) => <Image src={client.src} alt={client.alt} />)}
+        </div>
+      </div>
+    </div>
+  </Hero>
   <OurValues />
   <Expertise />
 </Layout>
