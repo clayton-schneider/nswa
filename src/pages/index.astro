@@ -1,8 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "@sections/Hero.astro";
 import Testimonial from "@sections/Testimonial.astro";
 import OurServices from "@sections/OurServices.astro";
 import Benefits from "@sections/Benefits.astro";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+
+import heroImg from "@img/home-hero.jpg";
 
 const testimonial = {
   text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text with your real content. Sometimes it’s nice to put in text just to get an idea of how text will fill in a space on your website.",
@@ -12,6 +16,19 @@ const testimonial = {
 ---
 
 <Layout title="Welcome to Astro.">
+  <Hero img={heroImg} title="Wealth">
+    <div
+      class="max-w-[700px] py-32 mx-auto text-white text-center relative z-10"
+    >
+      <h1 class="font-bold text-7xl">Headline With Value Proposition</h1>
+      <p class="mt-7 font-rubik font-semibold text-xl">
+        Describe what they can do with your service and how great it is.
+      </p>
+      <PrimaryBtn to="/contact" className="mt-10"
+        >Book An Appointment</PrimaryBtn
+      >
+    </div>
+  </Hero>
   <Benefits />
   <OurServices />
   <Testimonial testimonial={testimonial} />

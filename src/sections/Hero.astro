@@ -1,0 +1,29 @@
+---
+import Header from "@components/Header/Header.astro";
+import { Image } from "@astrojs/image/components";
+
+export interface Props {
+  img: string;
+  title: string;
+}
+
+const { img, title } = Astro.props;
+---
+
+<div class="relative overflow-hidden">
+  <p
+    class="absolute leading-none -bottom-20 -right-40 font-bold text-bg text-text-light/5 z-10"
+  >
+    {title}
+  </p>
+  <Image
+    src={img}
+    alt="client testimonial"
+    class="absolute inset-0 h-full object-cover"
+    quality={100}
+  />
+  <Header />
+  <div class="relative z-20">
+    <slot />
+  </div>
+</div>
