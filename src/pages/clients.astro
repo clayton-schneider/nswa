@@ -2,7 +2,11 @@
 import Testimonial from "@sections/Testimonial.astro";
 import Clients from "@sections/Clients.astro";
 import Layout from "src/layouts/Layout.astro";
+import Hero from "@sections/Hero.astro";
 import Workflow from "@sections/Workflow.astro";
+
+import { Image } from "@astrojs/image/components";
+import heroImg from "@img/clients-hero-banner.jpg";
 const testimonial = {
   text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text with your real content. Sometimes it’s nice to put in text just to get an idea of how text will fill in a space on your website.",
   name: "John Smith",
@@ -11,6 +15,20 @@ const testimonial = {
 ---
 
 <Layout title="Client Process | Natural State Wealth Advisors">
+  <Hero img={heroImg} title="Clients">
+    <div class="py-20 max-w-screen-xl mx-auto flex justify-between">
+      <div class="max-w-md">
+        <h1 class="font-bold text-7xl text-text-light">Client Experience</h1>
+        <p class="mt-7 font-rubik font-semibold text-xl text-text-off-white">
+          Explanation of how NSWA is unique in what they offer to clients
+        </p>
+      </div>
+      <Image
+        src={import("@img/clients-hero.jpg")}
+        alt="Natural State Wealth Advisors Client Experience"
+      />
+    </div>
+  </Hero>
   <Workflow />
   <Clients />
   <Testimonial testimonial={testimonial} />

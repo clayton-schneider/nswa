@@ -23,6 +23,7 @@ module.exports = {
         "text-light": "#FFFFFF",
         "text-dark": "#5A5A5A",
         "text-green": "#42563E",
+        "text-off-white": "#E1E1E1",
       },
       fontSize: {
         bg: "350px",
