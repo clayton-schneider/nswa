@@ -1,0 +1,54 @@
+---
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+
+const advisoryServices = [
+  {
+    icon: "mdi:report-bell-curve",
+    title: "Reporting",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+  },
+  {
+    icon: "mdi:phone-plus-outline",
+    title: "Financial Advising",
+    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+  },
+];
+---
+
+<section class="my-20 px-edge">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="max-w-2xl">
+      <h2 class="font-bold text-5xl">Advisory Services</h2>
+      <p class="mt-2 font-rubik text-text-green">
+        This is just placeholder text. Don't be alarmed, this is just here to
+        fill up space since your finalized copy isn't ready yet.
+      </p>
+    </div>
+    <div class="mt-10 flex justify-between items-center gap-20">
+      <div class="flex">
+        {
+          advisoryServices.map((service) => (
+            <div class="flex gap-8 max-w-sm">
+              <Icon
+                name={service.icon}
+                size={40}
+                class="text-text-green grow shrink-0"
+              />
+              <div class="mt-2">
+                <p class="font-bold text-xl">{service.title}</p>
+                <p class="mt-2 font-rubik leading-loose text-text-dark">
+                  {service.text}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <Image
+        src={import("@img/advisory-services.jpg")}
+        alt="advisory services"
+      />
+    </div>
+  </div>
+</section>
