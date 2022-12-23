@@ -41,7 +41,7 @@ const NavMenu = ({ links }: Props) => {
         </PrimaryBtn>
         <SecondaryBtn
           to="/"
-          className="!block border xl:!hidden w-full text-center lg:text-left lg:w-auto"
+          className="!block border border-text-green text-text-green xl:!hidden w-full text-center lg:text-left lg:w-auto"
         >
           Pay My Bill
         </SecondaryBtn>
