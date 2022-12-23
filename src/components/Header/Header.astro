@@ -19,8 +19,8 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<header class={(className ? className : "") + " px-edge relative"}>
-  <div class="max-w-screen-xl mx-auto py-4">
+<header class={(className ? className : "") + " px-edge py-10 relative"}>
+  <div class="max-w-screen-xl mx-auto py-4 flex justify-between xl:block">
     <div class="flex items-center justify-between">
       <a href="/">
         <Image
@@ -29,7 +29,7 @@ const { className } = Astro.props;
         />
       </a>
 
-      <div class="space-x-7">
+      <div class="hidden xl:block space-x-7">
         <PrimaryBtn className="w-[200px] text-center">Client Portal</PrimaryBtn>
         <SecondaryBtn className="w-[200px] text-center"
           >Pay My Bill</SecondaryBtn
