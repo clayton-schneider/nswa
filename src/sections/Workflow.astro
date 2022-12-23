@@ -20,7 +20,7 @@ const values = [
 ];
 ---
 
-<section class="py-36 px-edge relative">
+<section class="py-16 lg:py-36 px-edge relative">
   <Image
     src={import("@img/benefits-bg.jpg")}
     alt="natural state wealth advisors' workflow"
@@ -32,7 +32,9 @@ const values = [
       <h2 class="font-bold text-4xl">Describe Your Workflow</h2>
     </div>
 
-    <div class="mt-20 flex justify-center gap-20">
+    <div
+      class="mt-20 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 lg:gap-20"
+    >
       {
         values.map((value) => (
           <div class="text-center max-w-[325px]">
