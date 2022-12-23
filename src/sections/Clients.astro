@@ -31,8 +31,10 @@ const clients = [
 
 <section class="px-edge py-20">
   <div class="max-w-screen-xl mx-auto">
-    <h2 class="text-6xl text-center">We Work With Clients From</h2>
-    <div class="mt-8 flex justify-between items-center">
+    <h2 class="text-4xl lg:text-6xl text-center">We Work With Clients From</h2>
+    <div
+      class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 place-items-center gap-10"
+    >
       {clients.map((client) => <Image src={client.src} alt={client.alt} />)}
     </div>
   </div>
