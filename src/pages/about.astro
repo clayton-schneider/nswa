@@ -39,7 +39,9 @@ const clients = [
   <Hero title="About" img={heroImg}>
     <div class="py-20 max-w-screen-xl mx-auto">
       <div class="max-w-4xl mx-auto text-text-light text-center">
-        <h1 class="text-7xl font-bold">About Natural State Wealth Advisors</h1>
+        <h1 class="text-5xl lg:text-7xl font-bold">
+          About Natural State Wealth Advisors
+        </h1>
         <p class="mt-2 font-rubik font-semibold text-xl">
           Start with your mission statement and the reason why you do what you
           do
@@ -60,7 +62,7 @@ const clients = [
         <h2 class="text-3xl text-text-light text-center">
           We Work With Clients From
         </h2>
-        <div class="mt-8 flex justify-between items-center">
+        <div class="mt-8 flex flex-wrap gap-10 justify-center items-center">
           {clients.map((client) => <Image src={client.src} alt={client.alt} />)}
         </div>
       </div>
