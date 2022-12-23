@@ -47,12 +47,17 @@ const services = [
       </p>
     </div>
 
-    <div class="mt-10 grid grid-cols-3 grid-rows-3 gap-x-10 items-center">
+    <div
+      class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 gap-10 items-center"
+    >
       {
         services.map((service, i) => (
           <div
             class={
-              (i % 2 === 0 ? "text-right" : "flex-row-reverse") + " flex gap-10"
+              (i % 2 === 0
+                ? "text-center lg:text-right lg:flex-row"
+                : "text-center lg:text-left lg:flex-row-reverse") +
+              " max-w-xs mx-auto lg:max-w-full lg:mx-0 flex flex-col-reverse items-center lg:gap-10"
             }
           >
             <div class="space-y-2">
@@ -71,7 +76,7 @@ const services = [
       <Image
         src={import("@img/natural-state-wealth-advisors-services.jpg")}
         alt="natural state wealth advisors services"
-        class="mx-auto col-start-2 row-span-full object-cover"
+        class="mx-auto col-span-full lg:col-span-1 lg:col-start-2 lg:row-span-full object-cover"
         quality={100}
       />
     </div>
