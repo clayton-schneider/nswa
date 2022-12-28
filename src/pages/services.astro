@@ -9,7 +9,13 @@ import { Image } from "@astrojs/image/components";
 import heroImg from "@img/services-hero-banner.jpg";
 ---
 
-<Layout title="Client Process | Natural State Wealth Advisors">
+<Layout
+  seo={{
+    metaTitle: "Services | Natural State Wealth Advisors",
+    metaDescription:
+      "Natural State Wealth Advisors offers a customer centric approach to tax and financial advising.",
+  }}
+>
   <Hero img={heroImg} title="Services">
     <div
       class="py-20 max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10"
