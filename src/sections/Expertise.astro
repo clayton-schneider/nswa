@@ -4,8 +4,23 @@ import Icon from "astro-icon";
 const skills = [
   {
     icon: "ph:user-circle-light",
-    title: "This is just a placeholder",
-    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text with your real content. Sometimes it’s nice to put in text just to get an idea of how text will fill in a space on your website.",
+    title: "Tax Planning",
+    text: "This involves analyzing a client's financial situation and identifying strategies to minimize tax liability and optimize tax savings. This may include recommending tax-advantaged investments, structuring business operations to maximize tax benefits, and identifying opportunities for credits and deductions.",
+  },
+  {
+    icon: "ph:user-circle-light",
+    title: "Investment Planning",
+    text: "This involves developing a plan for how to allocate financial assets in order to achieve long-term financial goals. This may include recommending specific investments or asset classes, as well as developing strategies for diversification and risk management.",
+  },
+  {
+    icon: "ph:user-circle-light",
+    title: "Retirement Planning",
+    text: "This involves developing a plan for saving and investing for retirement, including identifying the amount of money needed for retirement, selecting retirement accounts and investments, and developing a plan for withdrawing funds during retirement.",
+  },
+  {
+    icon: "ph:user-circle-light",
+    title: "Financial Planning",
+    text: "This involves analyzing a client's financial situation and developing a comprehensive plan to achieve their financial goals. This may include creating a budget, reducing debt, saving for emergencies, and planning for major life events such as buying a home or paying for education.",
   },
 ];
 ---
@@ -14,20 +29,20 @@ const skills = [
   <p class="absolute -top-10 font-bold text-bg text-text-green/10">Expertise</p>
   <div class="max-w-screen-xl mx-auto relative z-10">
     <h2 class="font-bold text-5xl text-center">Our Expertise</h2>
-  <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
       {
-        [...Array(4).keys()].map(() => (
+        skills.map((skill) => (
           <div class="flex  gap-7">
             <Icon
-              name={skills[0].icon}
+              name={skill.icon}
               size={40}
               class="grow shrink-0 text-text-green"
             />
             <div class="mt-2">
-              <p class="font-bold text-xl">{skills[0].title}</p>
+              <p class="font-bold text-xl">{skill.title}</p>
 
               <p class="font-rubik leading-loose text-text-green">
-                {skills[0].text}
+                {skill.text}
               </p>
             </div>
           </div>

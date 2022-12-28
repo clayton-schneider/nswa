@@ -5,7 +5,7 @@ const taxServices = [
   {
     icon: "ph:user-circle",
     title: "Personal Returns",
-    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+    text: "We'll file your personal tax returns to maximize your refunds.",
   },
   {
     icon: "carbon:partnership",
@@ -15,12 +15,12 @@ const taxServices = [
   {
     icon: "codicon:workspace-trusted",
     title: "Trust Returns",
-    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+    text: "Maximize the financial returns on your trust, ensuring that your assets are managed effectively",
   },
   {
     icon: "tabler:receipt-tax",
     title: "Tax Projections and Managing Estimates",
-    text: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized.",
+    text: "We will estimate your future tax liability, helping you to plan your finances and make informed financial decisions",
   },
 ];
 ---
@@ -30,17 +30,16 @@ const taxServices = [
 
   <div class="max-w-screen-xl mx-auto relative z-10">
     <div class="text-center">
-      <h2 class="font-bold text-4xl">Describe What Your Brand Stands For</h2>
+      <h2 class="font-bold text-4xl">Tax Services</h2>
       <p
         class="mt-3 max-w-xl mx-auto font-rubik text-lg text-text-green leading-loose"
       >
-        This is just placeholder text. Don't be alarmed, this is just here to
-        fill up space since your finalized copy isn't ready yet.
+        Our services to help you navigate managing your taxes.
       </p>
     </div>
 
     <div
-      class="mt-12 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-20"
+      class="mt-12 flex flex-col lg:flex-row items-center justify-start lg:items-start gap-10 lg:gap-20"
     >
       <Image
         src={import("@img/tax-services.jpg")}
@@ -55,7 +54,7 @@ const taxServices = [
                 size={40}
                 class="text-text-green grow shrink-0"
               />
-              <div class="mt-2">
+              <div class="mt-2 w-full">
                 <p class="font-bold text-xl">{service.title}</p>
                 <p class="mt-2 font-rubik leading-loose text-text-dark">
                   {service.text}
