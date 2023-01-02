@@ -23,7 +23,10 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
   const [formState, setFormState] = useState<FormState>("ready");
 
   const sendOptions = {
-    to: [{ email: "clayton@simply-sprout.com", name: "Clayton Schneider" }],
+    to: [
+      { email: "clayton@simply-sprout.com", name: "Clayton Schneider" },
+      { email: "marisa@nswadvisors.com", name: "Marisa" },
+    ],
     from: {
       email: "noreply@simply-sprout.com",
       Name: "Website Email Bot",
