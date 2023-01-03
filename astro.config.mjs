@@ -17,10 +17,16 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sitegoeshere.com",
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), image(), sitemap(), partytown(), react()]
+  site: "https://nswadvisors.com/",
+  integrations: [
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    image(),
+    sitemap(),
+    partytown(),
+    react(),
+  ],
 });
