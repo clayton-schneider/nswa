@@ -1,0 +1,4 @@
+Sitemap: https://nswadvisors.com/
+
+User-agent: *
+Disallow: /assets/*
