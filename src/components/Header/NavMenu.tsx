@@ -41,7 +41,7 @@ const NavMenu = ({ links }: Props) => {
           Client Portal
         </PrimaryBtn>
         <SecondaryBtn
-          to="/pay-my-bill"
+          to="javascript:document.getElementById('loginform').submit();"
           className="!block border border-text-green text-text-green xl:!hidden w-full text-center lg:text-left lg:w-auto"
         >
           Pay My Bill

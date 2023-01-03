@@ -20,6 +20,20 @@ const { className } = Astro.props;
 ---
 
 <header class={(className ? className : "") + " px-edge py-10 relative"}>
+  <form
+    enctype="multipart/form-data"
+    method="post"
+    id="loginform"
+    action="https://www.kotapay.com/payport.icp"
+    target="_blank"
+  >
+    <input
+      type="hidden"
+      name="cred"
+      value="0xF6EC621914748259402481DB77BBEC7A4DBFEC4D"
+    />
+    <input type="hidden" name="style" value="NATSTA" />
+  </form>
   <div class="max-w-screen-xl mx-auto py-4 flex justify-between xl:block">
     <div class="flex items-center justify-between">
       <a href="/">
@@ -35,8 +49,9 @@ const { className } = Astro.props;
           to="https://onvio.us/clientcenter"
           className="w-[200px] text-center">Client Portal</PrimaryBtn
         >
-        <SecondaryBtn to="/pay-my-bill" className="w-[200px] text-center"
-          >Pay My Bill</SecondaryBtn
+        <SecondaryBtn
+          to="javascript:document.getElementById('loginform').submit();"
+          className="w-[200px] text-center">Pay My Bill</SecondaryBtn
         >
       </div>
     </div>
