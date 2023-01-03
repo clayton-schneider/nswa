@@ -30,8 +30,12 @@ const { className } = Astro.props;
       </a>
 
       <div class="hidden xl:block space-x-7">
-        <PrimaryBtn className="w-[200px] text-center">Client Portal</PrimaryBtn>
-        <SecondaryBtn className="w-[200px] text-center"
+        <PrimaryBtn
+          target="_blank"
+          to="https://onvio.us/clientcenter"
+          className="w-[200px] text-center">Client Portal</PrimaryBtn
+        >
+        <SecondaryBtn to="/pay-my-bill" className="w-[200px] text-center"
           >Pay My Bill</SecondaryBtn
         >
       </div>

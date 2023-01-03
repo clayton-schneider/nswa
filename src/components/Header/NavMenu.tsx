@@ -34,13 +34,14 @@ const NavMenu = ({ links }: Props) => {
           </li>
         ))}
         <PrimaryBtn
-          to="/"
+          target="_blank"
+          to="https://onvio.us/clientcenter"
           className="!block xl:!hidden w-full text-center lg:text-left lg:w-auto"
         >
           Client Portal
         </PrimaryBtn>
         <SecondaryBtn
-          to="/"
+          to="/pay-my-bill"
           className="!block border border-text-green text-text-green xl:!hidden w-full text-center lg:text-left lg:w-auto"
         >
           Pay My Bill
