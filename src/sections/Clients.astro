@@ -35,7 +35,11 @@ const clients = [
     <div
       class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 place-items-center gap-10"
     >
-      {clients.map((client) => <Image src={client.src} alt={client.alt} />)}
+      {
+        clients.map((client) => (
+          <Image format="webp" src={client.src} alt={client.alt} />
+        ))
+      }
     </div>
   </div>
 </section>

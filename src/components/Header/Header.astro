@@ -38,6 +38,8 @@ const { className } = Astro.props;
     <div class="flex items-center justify-between">
       <a href="/">
         <Image
+          lazy="eager"
+          format="webp"
           src={import("@img/natural-state-wealth-advisors-logo.png")}
           alt="hundred million logo"
         />
@@ -56,6 +58,6 @@ const { className } = Astro.props;
       </div>
     </div>
 
-    <NavMenu links={links} client:idle />
+    <NavMenu links={links} client:load />
   </div>
 </header>
