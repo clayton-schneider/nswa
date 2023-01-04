@@ -33,19 +33,23 @@ const NavMenu = ({ links }: Props) => {
             <a href={link.link}>{link.linkText}</a>
           </li>
         ))}
-        <PrimaryBtn
-          target="_blank"
-          to="https://onvio.us/clientcenter"
-          className="!block xl:!hidden w-full text-center lg:text-left lg:w-auto"
-        >
-          Client Portal
-        </PrimaryBtn>
-        <SecondaryBtn
-          to="javascript:document.getElementById('loginform').submit();"
-          className="!block border border-text-green text-text-green xl:!hidden w-full text-center lg:text-left lg:w-auto"
-        >
-          Pay My Bill
-        </SecondaryBtn>
+        <li>
+          <PrimaryBtn
+            target="_blank"
+            to="https://onvio.us/clientcenter"
+            className="!block xl:!hidden w-full text-center lg:text-left lg:w-auto"
+          >
+            Client Portal
+          </PrimaryBtn>
+        </li>
+        <li>
+          <SecondaryBtn
+            to="javascript:document.getElementById('loginform').submit();"
+            className="!block border border-text-green text-text-green xl:!hidden w-full text-center lg:text-left lg:w-auto"
+          >
+            Pay My Bill
+          </SecondaryBtn>
+        </li>
       </ul>
       <p className="hidden xl:block font-bold text-xl text-text-light">
         479-273-2539
