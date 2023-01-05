@@ -1,4 +1,4 @@
-Sitemap: https://nswadvisors.com/sitemap-index.xml
+Sitemap: https://www.nswadvisors.com/sitemap-index.xml
 
 User-agent: *
 Disallow: /assets/*

@@ -17,7 +17,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nswadvisors.com/",
+  site: "https://www.nswadvisors.com/",
   integrations: [
     tailwind({
       config: {
