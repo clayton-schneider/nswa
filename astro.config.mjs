@@ -25,4 +25,9 @@ export default defineConfig({
     sitemap(),
     react(),
   ],
+  vite: {
+    ssr: {
+      noExternal: ["@splidejs/splide"],
+    },
+  },
 });
