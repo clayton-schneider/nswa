@@ -10,12 +10,7 @@ export interface Props {
 const { img, title } = Astro.props;
 ---
 
-<div class="relative overflow-hidden">
-  <p
-    class="absolute leading-none -bottom-20 -right-40 font-bold text-bg text-text-light/5 z-10"
-  >
-    {title}
-  </p>
+<div class="relative">
   <Image
     lazy="eager"
     format="webp"
@@ -24,7 +19,12 @@ const { img, title } = Astro.props;
     class="absolute inset-0 h-full w-full object-cover"
   />
   <Header />
-  <div class="px-edge relative z-20">
+  <div class="px-edge relative overflow-hidden z-20">
+    <p
+      class="absolute leading-none -bottom-20 -right-40 font-bold text-bg text-text-light/5 z-10"
+    >
+      {title}
+    </p>
     <slot />
   </div>
 </div>

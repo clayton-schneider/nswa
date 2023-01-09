@@ -77,7 +77,7 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className="mt-10 grow w-full my-5 grid grid-cols-1 gap-4"
+      className="mt-10 grow w-full my-5 grid grid-cols-1 space-x-4"
     >
       {fields.map((field, key) => (
         <div
