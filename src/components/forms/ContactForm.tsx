@@ -77,14 +77,14 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className="mt-10 grow w-full my-5 grid grid-cols-1 space-x-4"
+      className="mt-10 grow w-full my-5 grid grid-cols-1 lg:grid-cols-2 gap-4"
     >
       {fields.map((field, key) => (
         <div
           className={
             (field.fieldType === "textarea"
-              ? "col-span-2"
-              : "col-span-2 lg:col-span-1") + " relative"
+              ? "col-span-full"
+              : "col-span-full lg:col-span-1") + " relative"
           }
           key={`input-${key}`}
         >
