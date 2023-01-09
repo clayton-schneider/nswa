@@ -1,0 +1,25 @@
+---
+import Hero from "@sections/Hero.astro";
+import Layout from "src/layouts/Layout.astro";
+import hero from "@img/404-hero.jpg";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+---
+
+<Layout
+  seo={{
+    metaTitle: "Page Not Found | Natural State Wealth Advisors",
+    metaDescription: "This page can't be found.",
+  }}
+>
+  <Hero img={hero} title="404">
+    <div class="my-20 max-w-7xl mx-auto text-text-light text-center">
+      <h1 class="font-bold text-7xl">404</h1>
+      <p class="mt-2 font-semibold font-rubik text-xl">Page Not Found</p>
+      <p class="mt-2 text-lg">
+        It looks like the page you are looking for can't be found.
+      </p>
+
+      <PrimaryBtn className="mt-2" to="/">Go Back</PrimaryBtn>
+    </div>
+  </Hero>
+</Layout>
