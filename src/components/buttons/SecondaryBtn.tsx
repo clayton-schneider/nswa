@@ -4,12 +4,10 @@ import type { ReactNode } from "react";
 interface Props {
   children: ReactNode;
   to?: string;
-  type?: "submit" | "reset" | "button";
   className?: string;
 }
-const SecondaryBtn = ({ children, to, className, type = "button" }: Props) => (
+const SecondaryBtn = ({ children, to, className }: Props) => (
   <a
-    type={type}
     href={to}
     className={
       className +
