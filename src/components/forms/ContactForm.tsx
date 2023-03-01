@@ -10,7 +10,7 @@ interface Props {
     name: string;
   }[];
 }
-type FormState = "ready" | "pending" | "success" | "error";
+type FormState = "ready" | "pending" | "success" | "error" | "empty";
 
 const ContactForm = ({ name, message, error, fields }: Props) => {
   function initializeForm(fields: Props["fields"]) {
@@ -52,6 +52,10 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
 
     setFormState("pending");
 
+    if (hasEmptyFields() === true) {
+      return;
+    }
+
     try {
       await fetch(
         "https://send-email.simplysprout.workers.dev/",
@@ -72,6 +76,18 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
     //@ts-ignore
     formData[id] = value;
     setData(formData);
+  };
+
+  const hasEmptyFields = () => {
+    for (const field in formData) {
+      // @ts-ignore
+      //  Need a way to type form
+      if (formData[field] === "") {
+        setFormState("empty");
+        return true;
+      }
+    }
+    return false;
   };
 
   return (
@@ -112,13 +128,14 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
         </div>
       ))}
 
-      {formState === "ready" && (
+      {(formState === "ready" || formState === "empty") && (
         <button>
           <PrimaryBtn className="col-span-full text-center">
             Send Message
           </PrimaryBtn>
         </button>
       )}
+      {formState === "empty" && <p>Please fill in all form fields.</p>}
       {formState === "pending" && <p>sending...</p>}
       {formState === "success" && <p>{message}</p>}
       {formState === "error" && <p className="text-red-500">{error}</p>}
