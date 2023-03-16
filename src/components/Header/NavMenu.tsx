@@ -52,7 +52,7 @@ const NavMenu = ({ links }: Props) => {
         </li>
       </ul>
       <p className="hidden xl:block font-bold text-xl text-text-light">
-        479-273-2539
+        479-348-8124
       </p>
       <Hamburger clicked={handleClick} isOpen={isOpen} color="white" />
     </div>
