@@ -35,6 +35,8 @@ const socialLinks = [
   { name: "mdi:youtube", link: "/" },
 ];
 
+const today = new Date();
+
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 ---
@@ -99,8 +101,10 @@ import { Icon } from "astro-icon";
   <div class="">
     <div class="max-w-screen-xl mx-auto py-5 border-t border-white">
       <p class="text-center">
-        Copyright © 2022 Natural State Wealth Advisors | All Right Reserved |
-        Powered By <a href="https://www.simply-sprout.com">Simply Sprout</a>
+        Copyright © {today.getFullYear()} Natural State Wealth Advisors | All Right
+        Reserved | Powered By <a href="https://www.simply-sprout.com"
+          >Simply Sprout</a
+        >
       </p>
     </div>
   </div>
