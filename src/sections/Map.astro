@@ -1,4 +1,28 @@
 ---
+import * as d3 from "d3";
+
+const aspectRatio = 1280 / 600;
+let width = 1280;
+let height = width / aspectRatio;
+
+// Fetch data necessary
+const [geoJsonData, clientData] = await Promise.all([
+  d3.json(Astro.url.origin + "/states.json"),
+  d3.csv(Astro.url.origin + "/states.csv"),
+]).catch((err) => console.log("Caught Error: ", err));
+
+const projection = d3.geoAlbersUsa().fitSize([width, height], geoJsonData);
+const pathGenerator = d3.geoPath().projection(projection);
+
+function stateHasClient(feature) {
+  let color = "";
+  clientData.forEach((state) => {
+    if (state.name === feature.properties.NAME) {
+      color = state.client === "true" ? "#42563E" : "white";
+    }
+  });
+  return color;
+}
 ---
 
 <section class="py-10 lg:py-20 px-edge">
@@ -12,61 +36,24 @@
     </div>
 
     <div id="container">
-      <svg id="map" class="mx-auto"></svg>
+      <svg
+        id="map"
+        class="mx-auto"
+        viewBox="0 0 1280 600"
+        preserveAspectRatio="xMinYMin meet"
+      >
+        {
+          geoJsonData.features.map((feature) => {
+            return (
+              <path
+                d={pathGenerator(feature)}
+                stroke="grey"
+                fill={stateHasClient(feature)}
+              />
+            );
+          })
+        }
+      </svg>
     </div>
   </div>
 </section>
-
-<script>
-  import * as d3 from "d3";
-
-  const aspectRatio = 1280 / 600;
-  let width = document.querySelector("#container")!.clientWidth;
-  let height = width / aspectRatio;
-
-  const svg = d3.select("#map").attr("width", width).attr("height", height);
-
-  // Fetch data necessary
-  const [geoJsonData, clientData] = await Promise.all([
-    d3.json("states.json"),
-    d3.csv("states.csv"),
-  ]).catch((err) => console.log("Caught Error: ", err));
-
-  const projection = d3.geoAlbersUsa().fitSize([width, height], geoJsonData);
-  const pathGenerator = d3.geoPath().projection(projection);
-
-  // Draw the states
-  svg
-    .selectAll("path")
-    .data(geoJsonData.features)
-    .enter()
-    .append("path")
-    .attr("d", pathGenerator)
-    .attr("stroke", "grey") // Color of the lines themselves
-    .attr("fill", function (d) {
-      // Decide which color the states are
-      let color = "";
-      clientData.forEach((state) => {
-        if (state.name === d.properties.NAME) {
-          color = state.client == "true" ? "#42563E" : "white";
-        }
-      });
-      return color;
-    });
-
-  const resize = () => {
-    // update dimensions
-    width = document.querySelector("#container")!.clientWidth;
-    height = width / aspectRatio;
-
-    // update svg
-    svg.attr("width", width).attr("height", height);
-
-    // update projection
-    projection.fitSize([width, height], geoJsonData);
-
-    svg.selectAll("path").attr("d", pathGenerator);
-  };
-
-  d3.select(window).on("resize", resize);
-</script>
