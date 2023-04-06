@@ -1,4 +1,5 @@
 ---
+import type { Feature, FeatureCollection } from "geojson";
 import * as d3 from "d3";
 
 const aspectRatio = 1280 / 600;
@@ -6,22 +7,33 @@ let width = 1280;
 let height = width / aspectRatio;
 
 // Fetch data necessary
-const [geoJsonData, clientData] = await Promise.all([
-  d3.json(
-    "https://raw.githubusercontent.com/clayton-schneider/nswa/main/src/data/states.json"
-  ),
-  d3.csv(
-    "https://raw.githubusercontent.com/clayton-schneider/nswa/main/src/data/states.csv"
-  ),
-]).catch((err) => console.log("Caught Error: ", err));
 
-const projection = d3.geoAlbersUsa().fitSize([width, height], geoJsonData);
+async function fetchGeoJson() {
+  const res = await fetch(
+    "https://raw.githubusercontent.com/clayton-schneider/nswa/main/src/data/states.json"
+  );
+  const data: FeatureCollection = await res.json();
+  return data;
+}
+
+async function fetchStates() {
+  const data = await d3.csv(
+    "https://raw.githubusercontent.com/clayton-schneider/nswa/main/src/data/states.csv"
+  );
+  data as unknown as { name: string; code: string; client: "true" | "" }[];
+  return data;
+}
+
+const clientData = await fetchStates();
+const geoJson = await fetchGeoJson();
+
+const projection = d3.geoAlbersUsa().fitSize([width, height], geoJson);
 const pathGenerator = d3.geoPath().projection(projection);
 
-function stateHasClient(feature) {
+function stateHasClient(feature: Feature) {
   let color = "";
   clientData.forEach((state) => {
-    if (state.name === feature.properties.NAME) {
+    if (state.name === feature.properties!.NAME) {
       color = state.client === "true" ? "#42563E" : "white";
     }
   });
@@ -47,7 +59,7 @@ function stateHasClient(feature) {
         preserveAspectRatio="xMinYMin meet"
       >
         {
-          geoJsonData.features.map((feature) => {
+          geoJson.features.map((feature) => {
             return (
               <path
                 d={pathGenerator(feature)}
