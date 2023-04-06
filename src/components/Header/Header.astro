@@ -1,7 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
 import PrimaryBtn from "@components/buttons/PrimaryBtn";
-import SecondaryBtn from "@components/buttons/SecondaryBtn";
 
 // Import components
 import NavMenu from "./NavMenu";
@@ -68,6 +67,6 @@ const { className } = Astro.props;
   const payBtn = document.getElementById("payBill");
 
   payBtn!.addEventListener("click", () => {
-    document.getElementById("loginform")!.submit();
+    (document.getElementById("loginform") as HTMLFormElement)!.submit();
   });
 </script>
