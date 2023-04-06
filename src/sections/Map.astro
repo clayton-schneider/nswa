@@ -7,8 +7,12 @@ let height = width / aspectRatio;
 
 // Fetch data necessary
 const [geoJsonData, clientData] = await Promise.all([
-  d3.json(Astro.url.origin + "/states.json"),
-  d3.csv(Astro.url.origin + "/states.csv"),
+  d3.json(
+    "https://raw.githubusercontent.com/clayton-schneider/nswa/main/src/data/states.json"
+  ),
+  d3.csv(
+    "https://raw.githubusercontent.com/clayton-schneider/nswa/main/src/data/states.csv"
+  ),
 ]).catch((err) => console.log("Caught Error: ", err));
 
 const projection = d3.geoAlbersUsa().fitSize([width, height], geoJsonData);
