@@ -51,9 +51,11 @@ const { className } = Astro.props;
           to="https://onvio.us/clientcenter"
           className="w-[200px] text-center">Client Portal</PrimaryBtn
         >
-        <SecondaryBtn
-          to="javascript:document.getElementById('loginform').submit();"
-          className="w-[200px] text-center">Pay My Bill</SecondaryBtn
+
+        <button
+          id="payBill"
+          class="w-[200px] text-center inline-block px-10 py-3 rounded-full text-lg text-white border border-white cursor-pointer"
+          >Pay My Bill</button
         >
       </div>
     </div>
@@ -61,3 +63,11 @@ const { className } = Astro.props;
     <NavMenu links={links} client:load />
   </div>
 </header>
+
+<script>
+  const payBtn = document.getElementById("payBill");
+
+  payBtn!.addEventListener("click", () => {
+    document.getElementById("loginform")!.submit();
+  });
+</script>
