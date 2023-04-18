@@ -1,13 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
-
-const advisoryServices = [
-  {
-    icon: "mdi:report-bell-curve",
-    title: "Reporting",
-    text: "We can assist you in preparing financial reports as needed by various financial institutions.",
-  },
+const taxServices = [
   {
     icon: "mdi:phone-plus-outline",
     title: "Financial Advising",
@@ -16,27 +10,39 @@ const advisoryServices = [
 ];
 ---
 
-<section class="my-20 px-edge">
-  <div class="max-w-screen-xl mx-auto">
-    <div class="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
-      <h2 class="font-bold text-5xl">Advisory Services</h2>
-      <p class="mt-2 font-rubik text-text-green">
-        Our services to help you manage your finances.
+<section class="py-20 px-edge overflow-x-hidden relative">
+  <p class="absolute select-none -top-10 font-bold text-bg text-text-green/10">
+    Services
+  </p>
+
+  <div class="max-w-screen-xl mx-auto relative z-10">
+    <div class="text-center">
+      <h2 class="font-bold text-4xl">Tax Services</h2>
+      <p
+        class="mt-3 max-w-xl mx-auto font-rubik text-lg text-text-green leading-loose"
+      >
+        Our services to help you navigate managing your taxes.
       </p>
     </div>
+
     <div
-      class="mt-10 flex flex-col lg:flex-row justify-between items-center gap-20"
+      class="mt-12 flex flex-col lg:flex-row items-center justify-start lg:items-start gap-10 lg:gap-20"
     >
-      <div class="flex flex-col lg:flex-row items-center lg:items-start">
+      <Image
+        format="webp"
+        src={import("@img/tax-services.jpg")}
+        alt="natural state wealth advisors tax services"
+      />
+      <div class="flex flex-col justify-between">
         {
-          advisoryServices.map((service) => (
-            <div class="flex gap-8 items-start md:max-w-sm">
+          taxServices.map((service) => (
+            <div class="flex gap-8">
               <Icon
                 name={service.icon}
                 size={40}
                 class="text-text-green grow shrink-0"
               />
-              <div class="mt-2">
+              <div class="mt-2 w-full">
                 <p class="font-bold text-xl">{service.title}</p>
                 <p class="mt-2 font-rubik leading-loose text-text-dark">
                   {service.text}
@@ -46,11 +52,6 @@ const advisoryServices = [
           ))
         }
       </div>
-      <Image
-        format="webp"
-        src={import("@img/advisory-services.jpg")}
-        alt="advisory services"
-      />
     </div>
   </div>
 </section>

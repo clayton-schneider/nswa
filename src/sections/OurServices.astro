@@ -4,31 +4,6 @@ import { Icon } from "astro-icon";
 import { Image } from "@astrojs/image/components";
 const services = [
   {
-    icon: "ph:user-circle",
-    title: "Personal Returns",
-    text: "We’ll file your personal tax returns and work to minimize your tax liability.",
-  },
-  {
-    icon: "tabler:receipt-tax",
-    title: "Tax Projections and Managing Estimates",
-    text: "We will estimate your future tax liability, helping you to plan your finances and make informed financial decisions.",
-  },
-  {
-    icon: "carbon:partnership",
-    title: "Partnerships & Corporations",
-    text: "We’ll file your business tax returns, and ensure you are following all reporting requirements and utilizing the tax code to the fullest.",
-  },
-  {
-    icon: "mdi:report-bell-curve",
-    title: "Reporting",
-    text: "We can assist you in preparing financial reports as needed by various financial institutions.",
-  },
-  {
-    icon: "codicon:workspace-trusted",
-    title: "Trust Returns",
-    text: "Maximize the financial returns on your trust, ensuring that your assets are managed effectively.",
-  },
-  {
     icon: "mdi:phone-plus-outline",
     title: "Financial Advising",
     text: "Expert guidance and personalized recommendations to help you manage your finances and achieve your financial goals.",
@@ -37,12 +12,14 @@ const services = [
 ---
 
 <section class="py-20 px-edge relative overflow-x-hidden">
-  <p class="absolute -top-10 font-bold text-bg text-text-green/10">Services</p>
+  <p class="absolute select-none -top-10 font-bold text-bg text-text-green/10">
+    Services
+  </p>
   <div class="max-w-screen-xl mx-auto relative z-10">
     <div class="text-center max-w-xl mx-auto space-y-2">
       <h2 class="font-bold text-5xl">Our Services</h2>
       <p class="font-rubik text-xl text-text-dark">
-        Tax and wealth advising services to help you meet your financial goals.
+        Wealth advising services to help you meet your financial goals.
       </p>
     </div>
 
