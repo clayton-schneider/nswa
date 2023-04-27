@@ -1,5 +1,17 @@
-<section class="py-20 px-edge">
-  <div class="max-w-screen-xl mx-auto text-center">
+---
+import { Image } from "@astrojs/image/components";
+---
+
+<section class="py-20 px-edge relative">
+  <Image
+    format="webp"
+    src={import("@img/testimonial-background.jpg")}
+    alt="client testimonial"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div
+    class="max-w-screen-xl mx-auto text-center text-text-light relative z-10"
+  >
     <h2 class="font-bold text-4xl">Looking for tax advising?</h2>
     <p class="mt-3 text-lg font-rubik">
       Head to our partner company Natural State Tax Advisors!
