@@ -19,22 +19,8 @@ const { className } = Astro.props;
 ---
 
 <header class={(className ? className : "") + " px-edge py-10 relative"}>
-  <form
-    enctype="multipart/form-data"
-    method="post"
-    id="loginform"
-    action="https://www.kotapay.com/payport.icp"
-    target="_blank"
-  >
-    <input
-      type="hidden"
-      name="cred"
-      value="0xF6EC621914748259402481DB77BBEC7A4DBFEC4D"
-    />
-    <input type="hidden" name="style" value="NATSTA" />
-  </form>
   <div class="max-w-screen-xl mx-auto py-4 flex justify-between gap-5 xl:block">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-center">
       <a href="/">
         <Image
           lazy="eager"
@@ -43,30 +29,8 @@ const { className } = Astro.props;
           alt="hundred million logo"
         />
       </a>
-
-      <div class="hidden xl:block space-x-7">
-        <PrimaryBtn
-          target="_blank"
-          to="https://onvio.us/clientcenter"
-          className="w-[200px] text-center">Client Portal</PrimaryBtn
-        >
-
-        <button
-          id="payBill"
-          class="w-[200px] text-center inline-block px-10 py-3 rounded-full text-lg text-white border border-white cursor-pointer"
-          >Pay My Bill</button
-        >
-      </div>
     </div>
 
     <NavMenu links={links} client:load />
   </div>
 </header>
-
-<script>
-  const payBtn = document.getElementById("payBill");
-
-  payBtn!.addEventListener("click", () => {
-    (document.getElementById("loginform") as HTMLFormElement)!.submit();
-  });
-</script>
