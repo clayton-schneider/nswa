@@ -12,6 +12,7 @@ const { img, title } = Astro.props;
 
 <div class="relative">
   <Image
+    quality={100}
     lazy="eager"
     format="webp"
     src={img}
