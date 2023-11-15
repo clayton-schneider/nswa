@@ -2,6 +2,7 @@
 import "../styles.css";
 import Footer from "@components/Footer/Footer.astro";
 import SEO from "@components/SEO.astro";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 export interface Props {
   seo: {
     metaTitle: string;
@@ -12,18 +13,14 @@ export interface Props {
 const { seo } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <SEO metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:wght@400;600&display=swap"
+    />
   </head>
   <body>
     <main>
