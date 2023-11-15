@@ -72,6 +72,24 @@ import { Icon } from "astro-icon";
           }
         </ul>
       </div>
+
+      <div class="max-w-xs">
+        <div>
+          <p class="font-bold text-xl">Holiday Hours</p>
+          <div class="mt-5 space-y-1 text-rose-300">
+            <p>We will be closed for Thanksgiving Nov. 22nd-24th</p>
+            <p>Closed for Christmas Dec. 25th - Dec. 26th</p>
+            <p>Closed for New Years on Jan. 1st</p>
+          </div>
+        </div>
+        <div class="mt-5">
+          <p class="font-bold text-xl">Normal Hours</p>
+          <div class="mt-5 space-y-1">
+            <p>Monday - Thursday 8:30am - 5:00pm</p>
+            <p>Friday 8:30am - 12:00pm</p>
+          </div>
+        </div>
+      </div>
       <div>
         <p class="font-bold text-xl">Contact Us</p>
         <ul class="mt-5 flex flex-col items-center lg:block space-y-5">
@@ -84,17 +102,6 @@ import { Icon } from "astro-icon";
             ))
           }
         </ul>
-        {
-          /*<div class="flex justify-center lg:justify-start space-x-2 mt-6">
-          {
-            socialLinks.map((link) => (
-              <a href={link.link}>
-                <Icon name={link.name} size={24} class="fill-primary" />
-              </a>
-            ))
-          }
-        </div>*/
-        }
       </div>
     </div>
   </footer>
