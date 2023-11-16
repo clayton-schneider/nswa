@@ -1,6 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
-import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import { Image } from "astro:assets";
 
 // Import components
 import NavMenu from "./NavMenu";
@@ -24,7 +23,6 @@ const { className } = Astro.props;
       <a href="/">
         <Image
           lazy="eager"
-          format="webp"
           src={import("@img/natural-state-wealth-advisors-logo.png")}
           alt="hundred million logo"
         />

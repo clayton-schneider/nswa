@@ -1,10 +1,10 @@
 ---
-import Clients from "@sections/Clients.astro";
+import ClientsSection from "@sections/ClientsSection.astro";
 import Layout from "src/layouts/Layout.astro";
 import Hero from "@sections/Hero.astro";
 import Workflow from "@sections/Workflow.astro";
 
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import heroImg from "@img/clients-hero-banner.jpg";
 ---
 
@@ -36,5 +36,5 @@ import heroImg from "@img/clients-hero-banner.jpg";
     </div>
   </Hero>
   <Workflow />
-  <Clients />
+  <ClientsSection />
 </Layout>

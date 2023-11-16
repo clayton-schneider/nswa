@@ -1,6 +1,6 @@
 ---
 import Header from "@components/Header/Header.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 export interface Props {
   img: string;
@@ -13,8 +13,7 @@ const { img, title } = Astro.props;
 <div class="relative">
   <Image
     quality={100}
-    lazy="eager"
-    format="webp"
+    loading="eager"
     src={img}
     alt="natural state wealth advisors"
     class="absolute inset-0 h-full w-full object-cover"
