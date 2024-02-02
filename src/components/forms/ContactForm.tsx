@@ -25,7 +25,7 @@ const ContactForm = ({ name, message, error, fields }: Props) => {
   const sendOptions = {
     to: [
       { email: "clayton@simply-sprout.com", name: "Clayton Schneider" },
-      { email: "admin@nswadvisors.com", name: "Marisa" },
+      { email: "admin@nswadvisors.com", name: "NSWA Admin" },
     ],
     from: {
       email: "noreply@simply-sprout.com",
